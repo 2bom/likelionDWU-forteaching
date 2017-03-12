@@ -201,24 +201,22 @@ footer {
 }
 
 #weekly-content {
+
   -webkit-align-items: stretch; /* Safari */
   align-items:         stretch;
+  .content-container {
+    width: 100%;
+    -webkit-flex-grow: 0; /* Safari */
+    flex-grow:         0;
+    -webkit-flex-basis: auto; /* Safari */
+    flex-basis:         auto;
+  }
 }
 
 .example {
-  width: 100%;
-  -webkit-flex-grow: 0; /* Safari */
-  flex-grow:         0;
-  -webkit-flex-basis: auto; /* Safari */
-  flex-basis:         auto;
   background-color: white;
 }
 .explanation {
-  width: 100%;
-  -webkit-flex-grow: 0; /* Safari */
-  flex-grow:         0;
-  -webkit-flex-basis: auto; /* Safari */
-  flex-basis:         auto;
   border-left: 1px solid #cccccc;
   background-image: linear-gradient(to right, #eeeeee 1%, white 10%);
 
