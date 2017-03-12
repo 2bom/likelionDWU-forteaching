@@ -1,3 +1,93 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// setting
+ $NavColor : #28323d;
+ $MainColorWhite: #D3D3D3;
+ $MainColorBlack: #222222;
+ $FeatureColor: #FF9E1B;
+ @font-face {
+     font-family: 'JejuGothic';
+     font-family: 'JejuMyeongjo';
+     font-family: 'orangejuice2.0';
+     src: font-url('JejuGothic.ttf') format('truetype');
+     src: font-url('JejuMyeongjo.ttf') format('truetype');
+     src: font-url('orangejuice2.0.ttf') format('truetype');
+ }
+
+
+
+// content section
+
+@media (max-width: 600px){
+  .column {
+    -webkit-flex-wrap: wrap; /* Safari */
+    flex-wrap:         wrap;
+    -webkit-flex-direction: column; /* Safari */
+    flex-direction:         column;
+  }
+  section.content-wrapper {
+    min-height: 0%;
+  }
+  nav.sidebar {
+    flex-basis: auto;
+    min-height: 50px;
+  }
+}
+.content-wrapper {
+  min-height: 82vh;
+  width: 100%;
+  justify-content: space-around;
+}
+.sidebar {
+  background-color: black;
+  -webkit-flex-basis: 250px; /* Safari */
+  flex-basis:         250px;
+}
+.content {
+  background-color: #E7E2D2;
+  color: $MainColorBlack;
+}
+.content-container {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+#weekly-content {
+  -webkit-align-items: stretch; /* Safari */
+  align-items:         stretch;
+  .content-container {
+    width: 100%;
+    -webkit-flex-grow: 0; /* Safari */
+    flex-grow:         0;
+    -webkit-flex-basis: auto; /* Safari */
+    flex-basis:         auto;
+  }
+}
+
+.example {
+  background-color: white;
+}
+.explanation {
+  border-left: 1px solid #cccccc;
+  background-image: linear-gradient(to right, #eeeeee 1%, white 10%);
+
+  h3 {
+    padding: 15px;
+    font-size: 25px;
+  }
+}
+@media (max-width: 600px){
+  .explanation {
+    border: none;
+    background-image: none;
+    background-color: white;
+  }
+}
+
+
+// index.html
+#main-content {
+  background-image: image-url("welcome.jpg");
+  background-size: cover;
+}
