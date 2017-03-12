@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta author="Bomin Lee">
+
+    <title>Likelion DWU</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  </head>
+
+  <body>
+    <div class="padding-container main-nav-container">
+      <h1 class="flex vertical-center logo"><a href="../main/index.erb">LIKELION DWU</a></h1>
+      <nav class="flex main-nav">
+        <ul class="flex direction vertical-center">
+          <h2 class="hidden">week navigation</h2>
+          <a class="menu-btn" href="#">≡</a>
+          <li class="flex nav-content direction-column"><a href="../main/week1.erb" id="week1">1주차</a></li>
+          <li class="nav-content direction-column"><a href="../main/week2.erb">2주차</a></li>
+          <li class="nav-content"><a href="../main/appendix.erb">참고자료</a></li>
+        </ul>
+      </nav>
+    </div>
+    <hr>
+    <hr>
+
+    <%= yield %>
+
+    <hr>
+    <hr>
+    <footer>
+      <div class="padding-container">
+        Copyright @ 2017 Bomin Lee - All Rights Reserved
+      </div>
+    </footer>
+
+  </body>
+</html>

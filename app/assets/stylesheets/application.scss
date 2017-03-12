@@ -1,0 +1,229 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+// setting
+ $NavColor : #28323d;
+ $MainColorWhite: #D3D3D3;
+ $MainColorBlack: #222222;
+ $FeatureColor: #FF9E1B;
+ @font-face {
+     font-family: 'JejuGothic';
+     font-family: 'JejuMyeongjo';
+     font-family: 'orangejuice2.0';
+     src: font-url('JejuGothic.ttf') format('truetype');
+     src: font-url('JejuMyeongjo.ttf') format('truetype');
+     src: font-url('orangejuice2.0.ttf') format('truetype');
+ }
+
+
+// reset
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+  color: white;
+  font-weight: 400;
+  }
+}
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+// common
+
+html {
+  font-size: 18px;
+  font-family: 'JejuGothic';
+
+  background-color: $NavColor;
+  /*background-color: #808B95;*/
+  color: $MainColorWhite;
+}
+.padding-container {
+  padding-top: 10px;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom: 10px;
+}
+.hidden {
+  display:none;
+}
+
+
+// default flex setting
+.flex {
+  display: -webkit-flex;
+  display: flex;
+}
+.direction-row {
+  flex-direction: row;
+}
+.direction-column {
+  flex-direction: column;
+}
+.vertical-center {
+  align-items: center;
+}
+
+// navigation bar
+h1 {
+  height: 45px;
+  font-family: 'orangejuice2.0';
+  font-weight: 400;
+  display: block;
+  float: left;
+  margin: 0;
+}
+.main-nav-container {
+  padding-top: 3vh;
+  padding-bottom: 1.5vh;
+  background-color: $NavColor;
+}
+.main-nav {
+  height: 45px;
+  justify-content: flex-end;
+  .direction {
+    flex-flow: row;
+  }
+  ul {
+    height: inherit;
+    .nav-content {
+      border-radius: 5px;
+      padding: 10px;
+      margin-left: 20px;
+      &:hover {
+        background-color: $MainColorBlack;
+      }
+    }
+    .detail-topics {
+      display: none;
+      background-color: $MainColorBlack;
+      position: absolute;
+      top: 75px;
+      padding: 10px;
+      li {
+        padding: 5px;
+      }
+    }
+    .menu-btn {
+      display: none;
+    }
+  }
+}
+@media (max-width: 600px){
+  .main-nav-container {
+    display: flex;
+    flex-flow: column;
+    flex-wrap: nowrap;
+
+    * {
+      justify-content: center;
+    }
+    .logo > a {
+      margin-bottom: 5px;
+    }
+    .main-nav {
+      width: 100%;
+      height: auto;
+      * {
+        width: inherit;
+        text-align: center;
+      }
+      .direction {
+        flex-flow: column;
+        flex-wrap: nowrap;
+      }
+      a {
+        border-radius: 5px;
+        padding: 3px;
+        margin-left: 0;
+        margin-top: 2px;
+        margin-bottom: 2px;
+      }
+    }
+  }
+}
+
+hr {
+  margin: 0;
+  border-top: 1px dashed rgba(0,0,0,0.25);;
+  border-bottom: 1px dashed rgba(255,255,255,0.25);
+}
+
+
+// footer
+footer {
+  background: $NavColor;
+  height: 8vh;
+  padding-top: 5px;
+}
+
+
+// content section
+.content-wrapper {
+  min-height: 82vh;
+  width: 100%;
+  justify-content: space-around;
+}
+.sidebar {
+  background-color: black;
+  -webkit-flex-basis: 250px; /* Safari */
+  flex-basis:         250px;
+}
+.content {
+  background-color: #E7E2D2;
+  color: $MainColorBlack;
+}
+.content-container {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+#weekly-content {
+  -webkit-align-items: stretch; /* Safari */
+  align-items:         stretch;
+}
+
+.example {
+  width: 100%;
+  -webkit-flex-grow: 0; /* Safari */
+  flex-grow:         0;
+  -webkit-flex-basis: auto; /* Safari */
+  flex-basis:         auto;
+  background-color: white;
+}
+.explanation {
+  width: 100%;
+  -webkit-flex-grow: 0; /* Safari */
+  flex-grow:         0;
+  -webkit-flex-basis: auto; /* Safari */
+  flex-basis:         auto;
+  border-left: 1px solid #cccccc;
+  background-image: linear-gradient(to right, #eeeeee 1%, white 10%);
+
+  h3 {
+    padding: 15px;
+    font-size: 25px;
+  }
+}
